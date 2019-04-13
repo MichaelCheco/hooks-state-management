@@ -1,10 +1,8 @@
-import React, { useReducer, createContext } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import countReducer, { initialState } from './reducers/countReducer';
-import userReducer, { userState } from './reducers/userReducer';
-export const CountStore = createContext();
-export const UserStore = createContext();
+import MyCountStore from './providers/countProvider';
+import MyUserStore from './providers/userProvider';
 
 function Container() {
 	return (
@@ -14,22 +12,6 @@ function Container() {
 	);
 }
 
-function MyUserStore(props) {
-	const [state, dispatch] = useReducer(userReducer, userState);
-	return (
-		<UserStore.Provider value={{ state, dispatch }}>
-			{props.children}
-		</UserStore.Provider>
-	);
-}
-function MyCountStore(props) {
-	const [state, dispatch] = useReducer(countReducer, initialState);
-	return (
-		<CountStore.Provider value={{ state, dispatch }}>
-			{props.children}
-		</CountStore.Provider>
-	);
-}
 function Store(props) {
 	return (
 		<MyUserStore>

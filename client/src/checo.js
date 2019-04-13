@@ -1,5 +1,6 @@
 import React from 'react';
-import { CountStore, UserStore } from './index';
+import { CountStore } from './providers/countProvider';
+import { UserStore } from './providers/userProvider';
 function Checo() {
 	const value = React.useContext(CountStore);
 	const user = React.useContext(UserStore);
