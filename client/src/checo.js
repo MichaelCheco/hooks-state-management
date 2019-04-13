@@ -4,7 +4,6 @@ import { UserStore } from './providers/userProvider';
 function Checo() {
 	const value = React.useContext(CountStore);
 	const user = React.useContext(UserStore);
-	console.log(value);
 	const { count, m } = value.state;
 	const { name, age } = user.state.user;
 	return (
