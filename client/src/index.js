@@ -1,35 +1,11 @@
 import React, { useReducer, createContext } from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import countReducer, { initialState } from './reducers/countReducer';
+import userReducer, { userState } from './reducers/userReducer';
 export const CountStore = createContext();
 export const UserStore = createContext();
-function countReducer(state, action) {
-	switch (action.type) {
-		case 'add': {
-			return {
-				...state,
-				count: state.count + 1,
-			};
-		}
-		default:
-			throw new Error(`Unsupported action type ${action.type}`);
-	}
-}
-function userReducer(state, action) {
-	switch (action.type) {
-		case 'append': {
-			return {
-				...state,
-				user: {
-					...state.user,
-					name: state.user.name + 'W',
-				},
-			};
-		}
-		default:
-			throw new Error(`Unsupported action type ${action.type}`);
-	}
-}
+
 function Container() {
 	return (
 		<Store>
@@ -39,9 +15,7 @@ function Container() {
 }
 
 function MyUserStore(props) {
-	const [state, dispatch] = useReducer(userReducer, {
-		user: { name: 'michael', age: 21 },
-	});
+	const [state, dispatch] = useReducer(userReducer, userState);
 	return (
 		<UserStore.Provider value={{ state, dispatch }}>
 			{props.children}
@@ -49,10 +23,7 @@ function MyUserStore(props) {
 	);
 }
 function MyCountStore(props) {
-	const [state, dispatch] = useReducer(countReducer, {
-		count: 1,
-		m: 'michael',
-	});
+	const [state, dispatch] = useReducer(countReducer, initialState);
 	return (
 		<CountStore.Provider value={{ state, dispatch }}>
 			{props.children}
