@@ -1,7 +1,7 @@
 import React from 'react';
-import Checo from './checo';
+import DylanIsCool from './dylan';
 function App() {
-	return <Checo />;
+	return <DylanIsCool />;
 }
 
 export default App;

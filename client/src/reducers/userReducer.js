@@ -5,7 +5,7 @@ export default function userReducer(state, action) {
 				...state,
 				user: {
 					...state.user,
-					name: state.user.name + `is cool`,
+					name: state.user.name + ` is cool`,
 				},
 			};
 		}
