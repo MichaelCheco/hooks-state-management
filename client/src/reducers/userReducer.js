@@ -5,7 +5,7 @@ export default function userReducer(state, action) {
 				...state,
 				user: {
 					...state.user,
-					name: state.user.name + 'W',
+					name: state.user.name + ` is cool`,
 				},
 			};
 		}
@@ -15,5 +15,5 @@ export default function userReducer(state, action) {
 }
 
 export const userState = {
-	user: { name: 'michael', age: 21 },
+	user: { name: 'dylan', age: 27 },
 };
