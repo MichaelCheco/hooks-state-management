@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { CountStore } from './providers/countProvider';
 import { UserStore } from './providers/userProvider';
 function Checo() {
-	const value = React.useContext(CountStore);
-	const user = React.useContext(UserStore);
-	const { count, m } = value.state;
+	const value = useContext(CountStore);
+	const user = useContext(UserStore);
+	const { count, m } = value.state; // count and m are destructured 
+																		//(value.state.count, value.state.m)  
+																		// value = Context(CountStore)
 	const { name, age } = user.state.user;
 	return (
 		<div>
