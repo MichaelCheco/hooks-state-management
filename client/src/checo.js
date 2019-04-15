@@ -6,7 +6,6 @@ function Checo() {
 	const user = React.useContext(UserStore);
 	const { count, m } = value.state;
 	const { name, age } = user.state.user;
-	console.log('rendered Checo');
 	return (
 		<div>
 			<h1>{m}</h1>

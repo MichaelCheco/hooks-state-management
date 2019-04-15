@@ -6,7 +6,6 @@ function Carlos() {
 	const user = React.useContext(UserStore);
 	const { count, m, test } = value.state;
 	const { name, age } = user.state.user;
-	console.log('rendered Carlos');
 	return (
 		<div>
 			<h1>{m}</h1>
