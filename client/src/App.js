@@ -1,7 +1,13 @@
 import React from 'react';
 import Checo from './checo';
+import Carlos from './carlos';
 function App() {
-	return <Checo />;
+	return (
+		<>
+			<Carlos />
+			<Checo />
+		</>
+	);
 }
 
 export default App;
